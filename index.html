@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>For You, Cil</title>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+      #pdf-viewer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- PDF Viewer -->
+    <iframe id="pdf-viewer" src="Note 4 Jul 2568 BE-1.pdf"></iframe>
+
+    <!-- Hidden audio player -->
+    <audio id="bg-music" src="Sampai Jadi Debu.mp3" loop></audio>
+
+    <script>
+      let played = false;
+
+      function playMusic() {
+        if (played) return;
+        played = true;
+        const audio = document.getElementById("bg-music");
+        audio.play();
+      }
+
+      window.addEventListener("click", playMusic);
+      window.addEventListener("touchstart", playMusic);
+    </script>
+  </body>
+</html>
